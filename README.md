@@ -1,4 +1,4 @@
 RSFancyGallery
 ==============
 
-WordPress plugin to add fancybox functionality to gallery elements.
+WordPress plugin to add FancyBox functionality to gallery elements.
