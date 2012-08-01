@@ -1,0 +1,9 @@
+.gallery-caption {
+	display: none;
+}
+
+.fancybox-close,
+.fancybox-prev span,
+.fancybox-next span {
+    background-image: url(controls.png);
+}
