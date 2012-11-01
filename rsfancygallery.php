@@ -33,12 +33,12 @@ class RSFancyGallery
 	
 	private $fancyBoxJS = array(
 		'file' => 'fancybox/source/jquery.fancybox.pack.js',
-		'version' => '2.0.6'
+		'version' => '2.1.3'
 	);
 	
 	private $fancyBoxCSS = array(
 		'file'    => 'fancybox/source/jquery.fancybox.css',
-		'version' => '2.0.6'
+		'version' => '2.1.3'
 	);
 	
 	public function __construct()
