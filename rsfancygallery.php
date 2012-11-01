@@ -5,7 +5,7 @@ Plugin URI:
 Description: Add fancybox functionality to gallery elements.
 Author: Mike Walsh @ Ricksticks
 Author URI: http://ricksticks.com
-Version: 0.1
+Version: 0.2
 */
 
 /*  Copyright 2012  Ricksticks  (email : admin@ricksticks.com)
@@ -41,24 +41,22 @@ class RSFancyGallery
 		'version' => '2.1.3'
 	);
 	
+	private $fancyBoxMediaJS = array(
+		'file' => 'fancybox/source/helpers/jquery.fancybox-media.js',
+		'version' => '2.1.3'
+	);
+	
 	public function __construct()
 	{
 		$dir = plugin_dir_url(__FILE__);
 		
-		//wp_deregister_script('jquery');
-		//wp_register_script('jquery',           $dir.$this->jQuery['file'], false, $this->jQuery['version']);
-		wp_register_script('mousewheel',       $dir.$this->mousewheel['file'], array('jquery'), $this->mousewheel['version']);
-		wp_register_script('fancybox',         $dir.$this->fancyBoxJS['file'], array('jquery'), $this->fancyBoxJS['version']);
-		wp_register_style('fancybox',          $dir.$this->fancyBoxCSS['file'], false, $this->fancyBoxCSS['version']);
-		wp_register_script('trigger-fancybox', $dir.'trigger-fancybox.js', array('fancybox'), '1');
-		wp_register_style('custom-fancybox',   $dir.'custom-fancybox.css', array('fancybox'), '1');
-		
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('mousewheel');
-		wp_enqueue_script('fancybox');
-		wp_enqueue_script('trigger-fancybox');
-		wp_enqueue_style('fancybox');
-		wp_enqueue_style('custom-fancybox');
+		wp_enqueue_script('mousewheel',       $dir.$this->mousewheel['file'], array('jquery'), $this->mousewheel['version']);
+		wp_enqueue_script('fancybox',         $dir.$this->fancyBoxJS['file'], array('jquery'), $this->fancyBoxJS['version']);
+		wp_enqueue_style('fancybox',          $dir.$this->fancyBoxCSS['file'], false, $this->fancyBoxCSS['version']);
+		wp_enqueue_script('fancybox-media',   $dir.$this->fancyBoxMediaJS['file'], array('jquery'), $this->fancyBoxMediaJS['version']);
+		wp_enqueue_script('trigger-fancybox', $dir.'trigger-fancybox.js', array('fancybox'), '1');
+		wp_enqueue_style('custom-fancybox',   $dir.'custom-fancybox.css', array('fancybox'), '1');
 	}
 }
 

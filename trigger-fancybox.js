@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 	/* Apply fancybox to multiple items */
-	$('#content .gallery a').attr('rel', 'gallery').fancybox({
+	$('#content .gallery a, .fancybox').attr('rel', 'gallery').fancybox({
 		margin: 50,
 		mousewheel: true,
 		helpers: {
@@ -17,6 +17,14 @@ jQuery(document).ready(function($) {
 			if ($cap.length) {
 				this.title = $cap.html();
 			}
+		}
+	});
+	
+	$('.fancybox-media').fancybox({
+		openEffect  : 'none',
+		closeEffect : 'none',
+		helpers : {
+			media : {}
 		}
 	});
 });
